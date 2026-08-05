@@ -1,6 +1,7 @@
 import './globals.css';
 import React from 'react';
 import { PageStack } from '@skyelite/ui';
+import { SmoothScrollProvider } from '@/components/SmoothScrollProvider';
 
 export const metadata = {
   title: 'Cut N Looks | Haute Coiffure & Beauty Studio',
@@ -19,9 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-[#141923] text-primary antialiased selection:bg-accent selection:text-surface">
-        <PageStack>
-          {children}
-        </PageStack>
+        <SmoothScrollProvider>
+          <PageStack>
+            {children}
+          </PageStack>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

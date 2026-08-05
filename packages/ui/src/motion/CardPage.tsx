@@ -16,9 +16,8 @@ export const CardPage: React.FC<CardPageProps> = ({ children, className = '' }) 
       ? { opacity: 0 }
       : {
           opacity: 0,
-          scale: 0.98,
+          scale: 0.985,
           y: 20,
-          filter: 'blur(8px)',
         },
     animate: shouldReduceMotion
       ? { opacity: 1 }
@@ -26,15 +25,13 @@ export const CardPage: React.FC<CardPageProps> = ({ children, className = '' }) 
           opacity: 1,
           scale: 1,
           y: 0,
-          filter: 'blur(0px)',
         },
     exit: shouldReduceMotion
       ? { opacity: 0 }
       : {
           opacity: 0,
-          scale: 0.98,
+          scale: 0.985,
           y: -20,
-          filter: 'blur(8px)',
         },
   };
 
@@ -45,7 +42,7 @@ export const CardPage: React.FC<CardPageProps> = ({ children, className = '' }) 
       exit="exit"
       variants={cardVariants}
       transition={{
-        duration: 0.8,
+        duration: 0.38,
         ease: [0.22, 1, 0.36, 1] as const,
       }}
       className={`relative w-full min-h-screen bg-background overflow-hidden ${className}`}
