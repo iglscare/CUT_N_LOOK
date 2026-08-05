@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #090b0e;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FAF7ED 0%, #D4AF37 50%, #A88725 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
