@@ -42,7 +42,7 @@ export const ImageRevealBackground: React.FC = () => {
         const cx = Math.round(smoothRef.current.x);
         const cy = Math.round(smoothRef.current.y);
         const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
-        const radius = Math.round(Math.min(420, Math.max(180, width * 0.18)));
+        const radius = Math.round(Math.min(220, Math.max(120, width * 0.10)));
 
         const maskCss = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.35) 75%, rgba(0,0,0,0) 100%)`;
 
