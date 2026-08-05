@@ -26,7 +26,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
         </div>
 
         {/* Interlocking Puzzle Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-1.5 sm:gap-2.5 items-stretch">
 
           {/* ITEM 1: Tall Left Photo Card (Span 3 cols) */}
           <motion.div
@@ -34,7 +34,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 relative rounded-[32px] overflow-hidden min-h-[380px] lg:min-h-[520px] shadow-sm group cursor-pointer border border-black/5"
+            className="lg:col-span-3 relative rounded-[28px] overflow-hidden min-h-[360px] lg:min-h-[480px] shadow-sm group cursor-pointer border border-black/5"
           >
             <img
               src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=900"
@@ -56,12 +56,12 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-3 relative bg-[#EBF4EE] rounded-[32px] p-7 sm:p-8 border border-[#D5E6DA] flex flex-col justify-between shadow-sm hover:shadow-md transition-all group"
+            className="lg:col-span-3 relative bg-[#EBF4EE] rounded-[28px] p-7 sm:p-8 border border-[#D5E6DA] flex flex-col justify-between shadow-sm hover:shadow-md transition-all group z-10"
           >
-            {/* Top Right Puzzle Notch */}
-            <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-[#F6F4EE] z-10" />
-            {/* Bottom Puzzle Tab */}
-            <div className="hidden lg:block absolute -bottom-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#EBF4EE] z-10 border-b border-[#D5E6DA]" />
+            {/* Right Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#EBF4EE] z-20 border-r border-[#D5E6DA]" />
+            {/* Bottom Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#EBF4EE] z-20 border-b border-[#D5E6DA]" />
 
             <div>
               <div className="w-10 h-10 rounded-full bg-[#3D7A56]/15 flex items-center justify-center text-[#3D7A56] mb-6">
@@ -108,10 +108,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-3 relative rounded-[32px] overflow-hidden min-h-[260px] lg:min-h-full shadow-sm border border-black/5"
+            className="lg:col-span-3 relative rounded-[28px] overflow-hidden min-h-[240px] lg:min-h-full shadow-sm border border-black/5"
           >
-            {/* Bottom Puzzle Notch */}
-            <div className="hidden lg:block absolute -bottom-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#F6F4EE] z-20" />
+            {/* Bottom Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F6F4EE] z-20" />
 
             <img
               src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=900"
@@ -133,10 +133,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-3 relative bg-[#FDF7EE] rounded-[32px] p-7 sm:p-8 border border-[#F3E5CE] flex flex-col justify-between shadow-sm hover:shadow-md transition-all"
+            className="lg:col-span-3 relative bg-[#FDF7EE] rounded-[28px] p-7 sm:p-8 border border-[#F3E5CE] flex flex-col justify-between shadow-sm hover:shadow-md transition-all group z-10"
           >
-            {/* Bottom Puzzle Tab */}
-            <div className="hidden lg:block absolute -bottom-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#FDF7EE] z-10 border-b border-[#F3E5CE]" />
+            {/* Bottom Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#FDF7EE] z-20 border-b border-[#F3E5CE]" />
 
             <div>
               <div className="w-10 h-10 rounded-full bg-[#C8A86B]/20 flex items-center justify-center text-[#9E7C3B] mb-6">
@@ -183,12 +183,12 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="lg:col-span-4 relative bg-[#1A1D24] text-white rounded-[32px] p-8 border border-white/10 flex flex-col justify-between shadow-xl"
+            className="lg:col-span-4 relative bg-[#1A1D24] text-white rounded-[28px] p-8 border border-white/10 flex flex-col justify-between shadow-xl z-20"
           >
-            {/* Top Puzzle Notch */}
-            <div className="hidden lg:block absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#F6F4EE] z-10" />
-            {/* Right Puzzle Tab */}
-            <div className="hidden lg:block absolute -right-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-[#1A1D24] z-10 border-r border-white/10" />
+            {/* Top Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F6F4EE] z-20" />
+            {/* Right Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#1A1D24] z-20 border-r border-white/10" />
 
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -249,10 +249,12 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="lg:col-span-4 relative bg-white rounded-[32px] p-8 border border-black/8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all"
+            className="lg:col-span-4 relative bg-white rounded-[28px] p-8 border border-black/8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all z-10"
           >
-            {/* Left Puzzle Notch */}
-            <div className="hidden lg:block absolute -left-3.5 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-[#F6F4EE] z-10" />
+            {/* Left Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#1A1D24] z-20" />
+            {/* Right Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white z-20 border-r border-black/8" />
 
             <div>
               <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center text-[#1F1F1F] mb-6">
@@ -307,10 +309,12 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="lg:col-span-4 relative bg-[#F5EEF8] rounded-[32px] p-8 border border-[#E4D5EA] flex flex-col justify-between shadow-sm hover:shadow-md transition-all"
+            className="lg:col-span-4 relative bg-[#F5EEF8] rounded-[28px] p-8 border border-[#E4D5EA] flex flex-col justify-between shadow-sm hover:shadow-md transition-all z-10"
           >
-            {/* Top Puzzle Notch */}
-            <div className="hidden lg:block absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#F6F4EE] z-10" />
+            {/* Left Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white z-20" />
+            {/* Top Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F6F4EE] z-20" />
 
             <div>
               <div className="w-10 h-10 rounded-full bg-[#7A3E8A]/15 flex items-center justify-center text-[#7A3E8A] mb-6">
@@ -361,8 +365,11 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="lg:col-span-6 relative bg-white rounded-[32px] p-8 border border-black/8 flex flex-col sm:flex-row items-center gap-6 shadow-sm"
+            className="lg:col-span-6 relative bg-white rounded-[28px] p-8 border border-black/8 flex flex-col sm:flex-row items-center gap-6 shadow-sm z-10"
           >
+            {/* Right Male Puzzle Tab */}
+            <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white z-20 border-r border-black/8" />
+
             <div className="w-full sm:w-1/2 h-48 sm:h-full rounded-2xl overflow-hidden relative shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800"
@@ -401,8 +408,11 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="lg:col-span-6 relative bg-[#181C24] text-white rounded-[32px] p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6 shadow-md"
+            className="lg:col-span-6 relative bg-[#181C24] text-white rounded-[28px] p-8 border border-white/10 flex flex-col sm:flex-row items-center gap-6 shadow-md z-10"
           >
+            {/* Left Female Puzzle Notch */}
+            <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white z-20" />
+
             <div className="w-full sm:w-1/2 h-48 sm:h-full rounded-2xl overflow-hidden relative shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=800"
