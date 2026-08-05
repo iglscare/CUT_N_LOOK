@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-6 max-w-xl bg-white/30 sm:bg-white/85 backdrop-blur-xl rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-white/60 shadow-[0_20px_70px_rgba(0,0,0,0.08)] flex flex-col justify-between"
+          className="lg:col-span-6 max-w-xl bg-white/30 backdrop-blur-xl rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-white/60 shadow-[0_20px_70px_rgba(0,0,0,0.08)] flex flex-col justify-between"
         >
           <div>
             {/* Tagline Header */}
