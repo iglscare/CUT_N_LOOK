@@ -47,11 +47,11 @@ export const InstagramFeed: React.FC = () => {
   };
 
   const posts = [
-    { url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop', title: 'Hair Architecture', likes: '3.4k' },
-    { url: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop', title: 'Balayage & Glossing', likes: '4.8k' },
-    { url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop', title: 'Royal Bridal Suite', likes: '5.2k' },
-    { url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop', title: 'Nail Art & Spa', likes: '2.9k' },
-    { url: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop', title: 'Dewy Glass Skin', likes: '4.1k' },
+    { url: '/insta/insta_1.png', title: 'Hair Architecture', likes: '3.4k' },
+    { url: '/insta/insta_2.png', title: 'Balayage & Glossing', likes: '4.8k' },
+    { url: '/insta/insta_3.png', title: 'Royal Bridal Suite', likes: '5.2k' },
+    { url: '/insta/insta_4.png', title: 'Nail Art & Spa', likes: '2.9k' },
+    { url: '/insta/insta_5.png', title: 'Dewy Glass Skin', likes: '4.1k' },
   ];
 
   return (
