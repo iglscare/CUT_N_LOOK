@@ -49,7 +49,7 @@ export default function BookPage() {
       `Please confirm my reservation. Thank you!`;
 
     const encodedMessage = encodeURIComponent(textMessage);
-    const whatsappUrl = `https://wa.me/919910346363?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/919468264728?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 

@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 { icon: Instagram, href: 'https://www.instagram.com/cut_n_looks_/?hl=en', label: '@cut_n_looks_' },
                 { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
                 { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                { icon: MessageCircle, href: 'https://wa.me/919910346363', label: 'WhatsApp' },
+                { icon: MessageCircle, href: 'https://wa.me/919468264728', label: 'WhatsApp' },
               ].map((item, idx) => (
                 <motion.a
                   key={idx}

@@ -54,7 +54,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       `Please confirm my reservation. Thank you!`;
 
     const encodedMessage = encodeURIComponent(textMessage);
-    const whatsappUrl = `https://wa.me/919910346363?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/919468264728?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -116,7 +116,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 Reservation Dispatched to WhatsApp
               </h3>
               <p className="text-xs sm:text-sm text-[#6B7280] max-w-md leading-relaxed mb-8 font-normal">
-                Your luxury appointment for <span className="font-bold text-[#1F1F1F]">{formData.service}</span> with <span className="font-bold text-[#1F1F1F]">{formData.stylist}</span> has been formatted for our Dwarka studio WhatsApp desk (+91 99103 46363).
+                Your luxury appointment for <span className="font-bold text-[#1F1F1F]">{formData.service}</span> with <span className="font-bold text-[#1F1F1F]">{formData.stylist}</span> has been formatted for our Dwarka studio WhatsApp desk (+91 94682 64728).
               </p>
 
               <div className="w-full flex flex-col gap-3">
