@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Button, Card, Badge, Input, Modal } from '@skyelite/ui';
 import {
   Scissors, LayoutDashboard, Calendar as CalendarIcon, Users, UserCheck, DollarSign,
@@ -185,7 +186,12 @@ export default function AdminDashboardPage() {
 
         {/* Tab 1: Overview */}
         {activeTab === 'overview' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          >
             {/* Appointment Schedule List */}
             <div className="lg:col-span-2">
               <Card variant="default">
@@ -261,7 +267,7 @@ export default function AdminDashboardPage() {
                 </div>
               </Card>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {/* Tab 2: AI Assistant Module */}
