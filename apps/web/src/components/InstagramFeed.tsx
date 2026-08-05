@@ -47,23 +47,23 @@ export const InstagramFeed: React.FC = () => {
   };
 
   const posts = [
-    { url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop', likes: '1.4k' },
-    { url: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop', likes: '2.1k' },
-    { url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop', likes: '980' },
-    { url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop', likes: '3.2k' },
-    { url: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop', likes: '1.8k' },
+    { url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop', title: 'Hair Architecture', likes: '3.4k' },
+    { url: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop', title: 'Balayage & Glossing', likes: '4.8k' },
+    { url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop', title: 'Royal Bridal Suite', likes: '5.2k' },
+    { url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=800&auto=format&fit=crop', title: 'Nail Art & Spa', likes: '2.9k' },
+    { url: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=800&auto=format&fit=crop', title: 'Dewy Glass Skin', likes: '4.1k' },
   ];
 
   return (
     <section ref={sectionRef} className="py-20 bg-background border-t border-border overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 text-center mb-10">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/cut_n_looks_/?hl=en"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent hover:text-primary transition-colors group"
         >
-          <Instagram className="w-4 h-4 group-hover:rotate-12 transition-transform" /> Follow @CutNLooksStudio
+          <Instagram className="w-4 h-4 group-hover:rotate-12 transition-transform" /> Follow @cut_n_looks_ On Instagram ↗
         </a>
       </div>
 
@@ -71,7 +71,7 @@ export const InstagramFeed: React.FC = () => {
         {posts.map((post, idx) => (
           <a
             key={idx}
-            href="https://instagram.com"
+            href="https://www.instagram.com/cut_n_looks_/?hl=en"
             target="_blank"
             rel="noreferrer"
             onMouseEnter={handleCardMouseEnter}
@@ -79,12 +79,13 @@ export const InstagramFeed: React.FC = () => {
           >
             <img
               src={post.url}
-              alt="Instagram Feed"
+              alt="Cut N Looks Instagram Post"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-background gap-2 text-xs font-semibold">
-              <Instagram className="insta-icon w-6 h-6 text-accent" />
-              <span className="flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-accent fill-accent" /> {post.likes}</span>
+            <div className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-background gap-2 text-xs font-semibold p-4 text-center">
+              <Instagram className="insta-icon w-7 h-7 text-accent" />
+              <span className="text-white font-bold">{post.title}</span>
+              <span className="flex items-center gap-1 text-[11px] text-white/90"><Heart className="w-3.5 h-3.5 text-accent fill-accent" /> {post.likes}</span>
             </div>
           </a>
         ))}
