@@ -53,11 +53,13 @@ export default function AdminDashboardPage() {
       <aside className="w-64 bg-obsidian-800 border-r border-obsidian-700 p-6 flex flex-col justify-between hidden md:flex">
         <div>
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-skygold-400 to-skygold-600 flex items-center justify-center shadow-lg">
-              <Scissors className="w-5 h-5 text-obsidian-900" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="Cut N Looks Logo"
+              className="w-10 h-10 rounded-full border border-skygold-500/50 shadow-lg object-cover"
+            />
             <div>
-              <span className="text-lg font-serif font-bold gold-gradient-text">SKYELITE</span>
+              <span className="text-lg font-serif font-bold gold-gradient-text">CUT N LOOKS</span>
               <span className="text-[9px] block text-slate-400 uppercase tracking-widest font-semibold">Salon Owner HQ</span>
             </div>
           </div>

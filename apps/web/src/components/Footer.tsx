@@ -12,7 +12,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/logo.png"
+                alt="Cut N Looks Logo"
+                className="w-10 h-10 rounded-full border border-[#C8A86B]/40 shadow-sm object-cover"
+              />
               <span className="text-2xl font-serif font-bold text-[#202A36] tracking-tight">
                 Cut N Looks<span className="text-[#C8A86B]">.</span>
               </span>

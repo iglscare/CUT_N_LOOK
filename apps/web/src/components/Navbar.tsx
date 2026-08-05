@@ -42,8 +42,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
               : 'bg-white/90 backdrop-blur-sm border-black/5 shadow-sm'
           }`}
         >
-          {/* Logo & Subtitle */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3">
+          {/* Logo Image & Subtitle */}
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3">
+            <img
+              src="/logo.png"
+              alt="Cut N Looks Salon Logo"
+              className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[#C8A86B]/40 shadow-sm object-cover"
+            />
             <span className="text-lg sm:text-2xl font-serif font-bold tracking-tight text-[#1F1F1F]">
               Cut N Looks<span className="text-[#C8A86B]">.</span>
             </span>
