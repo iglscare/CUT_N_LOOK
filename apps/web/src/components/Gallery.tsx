@@ -25,7 +25,7 @@ const GALLERY_ITEMS = [
   },
   {
     id: 3,
-    title: 'Fifth Ave Luxury Studio Interior',
+    title: 'Dwarka Luxury Studio Interior',
     category: 'Hair Architecture',
     image: '/gallery/gallery_3.png',
     gridSpan: 'lg:col-span-4 lg:row-span-1 min-h-[280px]',
