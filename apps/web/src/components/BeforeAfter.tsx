@@ -39,30 +39,38 @@ export const BeforeAfter: React.FC = () => {
     setSliderPosition(percent);
   };
 
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!e.touches[0]) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.touches[0].clientX - rect.left;
+    const percent = Math.min(100, Math.max(0, (x / rect.width) * 100));
+    setSliderPosition(percent);
+  };
+
   return (
-    <section id="before-after" className="py-28 px-4 sm:px-8 bg-surface text-primary border-y border-border">
+    <section id="before-after" className="py-20 sm:py-28 px-4 sm:px-8 bg-surface text-primary border-y border-border">
       <div className="max-w-[1440px] mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-accent mb-3 block">
             Real Transformations
           </span>
-          <h2 className="text-4xl sm:text-6xl font-display font-bold text-primary tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-6xl font-display font-bold text-primary tracking-tight mb-4 sm:mb-6">
             Before & After Precision
           </h2>
-          <p className="text-secondary text-base sm:text-lg leading-relaxed font-normal">
-            Drag your cursor across the visual slider below to experience the subtle magic of our master colorists and stylists.
+          <p className="text-secondary text-sm sm:text-lg leading-relaxed font-normal">
+            Drag your cursor or swipe your finger across the visual slider below to experience the transformation.
           </p>
         </div>
 
         {/* Preset Selector Tabs */}
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
+        <div className="flex justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 flex-wrap">
           {PRESETS.map((preset) => {
             const isActive = activePreset.id === preset.id;
             return (
               <button
                 key={preset.id}
                 onClick={() => setActivePreset(preset)}
-                className={`relative px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                className={`relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   isActive ? 'text-primary font-bold' : 'text-secondary hover:text-primary'
                 }`}
               >
@@ -81,10 +89,12 @@ export const BeforeAfter: React.FC = () => {
 
         {/* Interactive Image Comparison Slider */}
         <motion.div
-          whileHover={{ scale: 1.01 }}
+          whileHover={{ scale: 1.005 }}
           transition={{ duration: 0.3 }}
           onMouseMove={handleMouseMove}
-          className="relative max-w-4xl mx-auto h-[400px] sm:h-[550px] rounded-3xl overflow-hidden border border-border shadow-hover cursor-ew-resize select-none"
+          onTouchMove={handleTouchMove}
+          onTouchStart={handleTouchMove}
+          className="relative max-w-4xl mx-auto h-[320px] sm:h-[550px] rounded-3xl overflow-hidden border border-border shadow-hover cursor-ew-resize select-none touch-none"
         >
           {/* After Image (Full Color & High Luster Background) */}
           <img

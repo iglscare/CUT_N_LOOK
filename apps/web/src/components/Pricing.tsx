@@ -25,8 +25,8 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
           </p>
         </div>
 
-        {/* Interlocking Seamless Zero-Gap Puzzle Canvas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-0 items-stretch rounded-[36px] overflow-hidden border border-black/10 shadow-lg bg-white">
+        {/* Interlocking Seamless Zero-Gap Puzzle Canvas (Desktop) / Clean Stacked Cards (Mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 lg:gap-0 items-stretch lg:rounded-[36px] lg:overflow-hidden lg:border lg:border-black/10 lg:shadow-lg lg:bg-white">
 
           {/* ITEM 1: Tall Left Photo Card (Span 3 cols) */}
           <motion.div
@@ -34,7 +34,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3 }}
-            className="lg:col-span-3 relative overflow-hidden min-h-[380px] lg:min-h-[500px] group cursor-pointer border-r border-b border-black/8"
+            className="lg:col-span-3 relative overflow-hidden min-h-[320px] sm:min-h-[380px] lg:min-h-[500px] rounded-3xl lg:rounded-none group cursor-pointer border lg:border-r lg:border-b lg:border-t-0 lg:border-l-0 border-black/8 shadow-sm lg:shadow-none"
           >
             <img
               src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=900"
@@ -56,7 +56,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.04 }}
-            className="lg:col-span-3 relative bg-[#EBF4EE] p-7 sm:p-8 border-r border-b border-[#D5E6DA] flex flex-col justify-between group z-10"
+            className="lg:col-span-3 relative bg-[#EBF4EE] p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-r lg:border-b lg:border-t-0 lg:border-l-0 border-[#D5E6DA] flex flex-col justify-between group z-10 shadow-sm lg:shadow-none"
           >
             {/* Bottom Male Puzzle Tab extending into Row 2 */}
             <div className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#EBF4EE] z-30 shadow-sm" />
@@ -108,7 +108,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.08 }}
-            className="lg:col-span-3 relative overflow-hidden min-h-[240px] lg:min-h-full border-r border-b border-black/8"
+            className="lg:col-span-3 relative overflow-hidden min-h-[220px] lg:min-h-full rounded-3xl lg:rounded-none border lg:border-r lg:border-b lg:border-t-0 lg:border-l-0 border-black/8 shadow-sm lg:shadow-none"
           >
             {/* Bottom Male Puzzle Tab extending down */}
             <div className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#181C24] z-30 shadow-md" />
@@ -133,7 +133,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.12 }}
-            className="lg:col-span-3 relative bg-[#FDF7EE] p-7 sm:p-8 border-b border-[#F3E5CE] flex flex-col justify-between group z-10"
+            className="lg:col-span-3 relative bg-[#FDF7EE] p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-b lg:border-t-0 lg:border-l-0 border-[#F3E5CE] flex flex-col justify-between group z-10 shadow-sm lg:shadow-none"
           >
             {/* Bottom Male Puzzle Tab extending down */}
             <div className="hidden lg:block absolute -bottom-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#FDF7EE] z-30 shadow-sm" />
@@ -183,7 +183,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.04 }}
-            className="lg:col-span-4 relative bg-[#181C24] text-white p-8 border-r border-b border-white/10 flex flex-col justify-between shadow-2xl z-20"
+            className="lg:col-span-4 relative bg-[#181C24] text-white p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-r lg:border-b lg:border-t-0 lg:border-l-0 border-white/10 flex flex-col justify-between shadow-2xl lg:shadow-none z-20"
           >
             {/* Top Female Puzzle Notch receiving Card 2's bottom tab */}
             <div className="hidden lg:block absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#181C24] z-10" />
@@ -249,7 +249,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.08 }}
-            className="lg:col-span-4 relative bg-white p-8 border-r border-b border-black/8 flex flex-col justify-between z-10"
+            className="lg:col-span-4 relative bg-white p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-r lg:border-b lg:border-t-0 lg:border-l-0 border-black/8 flex flex-col justify-between z-10 shadow-sm lg:shadow-none"
           >
             {/* Left Female Puzzle Notch receiving Card 5's right tab */}
             <div className="hidden lg:block absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#181C24] z-10" />
@@ -311,7 +311,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.12 }}
-            className="lg:col-span-4 relative bg-[#F5EEF8] p-8 border-b border-[#E4D5EA] flex flex-col justify-between z-10"
+            className="lg:col-span-4 relative bg-[#F5EEF8] p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-b lg:border-t-0 lg:border-l-0 border-[#E4D5EA] flex flex-col justify-between z-10 shadow-sm lg:shadow-none"
           >
             {/* Left Female Puzzle Notch receiving Card 6's right tab */}
             <div className="hidden lg:block absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white z-10" />
@@ -367,7 +367,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.04 }}
-            className="lg:col-span-6 relative bg-white p-8 border-r border-black/8 flex flex-col sm:flex-row items-center gap-6 z-10"
+            className="lg:col-span-6 relative bg-white p-7 sm:p-8 rounded-3xl lg:rounded-none border lg:border-r lg:border-b-0 lg:border-t-0 lg:border-l-0 border-black/8 flex flex-col sm:flex-row items-center gap-6 z-10 shadow-sm lg:shadow-none"
           >
             {/* Right Male Puzzle Tab extending onto Card 9 */}
             <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white z-30 shadow-sm border-r border-black/8" />
@@ -410,7 +410,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.08 }}
-            className="lg:col-span-6 relative bg-[#181C24] text-white p-8 flex flex-col sm:flex-row items-center gap-6 z-10"
+            className="lg:col-span-6 relative bg-[#181C24] text-white p-7 sm:p-8 rounded-3xl lg:rounded-none border-0 flex flex-col sm:flex-row items-center gap-6 z-10 shadow-md lg:shadow-none"
           >
             {/* Left Female Puzzle Notch receiving Card 8's right tab */}
             <div className="hidden lg:block absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white z-10" />
