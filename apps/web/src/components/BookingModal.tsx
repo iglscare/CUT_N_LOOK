@@ -105,36 +105,76 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </button>
 
           {isSubmitted ? (
-            <div className="py-10 text-center flex flex-col items-center relative z-10">
-              <div className="w-20 h-20 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center justify-center mb-5 shadow-sm">
-                <CheckCircle2 className="w-10 h-10 animate-bounce" />
+            <div className="py-6 text-center flex flex-col items-center relative z-10">
+              {/* Luxury Gold Animated Check Badge */}
+              <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#C8A86B] to-[#E6CA94] text-[#12151C] shadow-[0_10px_30px_rgba(200,168,107,0.3)] flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-emerald-600 mb-2 block">
-                INSTANT WHATSAPP DISPATCH READY
+
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#C8A86B] mb-1 block">
+                RESERVATION TICKET READY
               </span>
-              <h3 className="text-3xl font-serif font-bold text-[#1F1F1F] mb-3 tracking-tight">
-                Reservation Dispatched to WhatsApp
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#1F1F1F] mb-2 tracking-tight">
+                Send Ticket via WhatsApp
               </h3>
-              <p className="text-xs sm:text-sm text-[#6B7280] max-w-md leading-relaxed mb-8 font-normal">
-                Your luxury appointment for <span className="font-bold text-[#1F1F1F]">{formData.service}</span> with <span className="font-bold text-[#1F1F1F]">{formData.stylist}</span> has been formatted for our Dwarka studio WhatsApp desk (+91 94682 64728).
+              <p className="text-xs text-[#6B7280] max-w-sm leading-relaxed mb-6">
+                Your luxury reservation is formatted. Tap below to dispatch your pass directly to our Dwarka studio concierge.
               </p>
 
+              {/* Luxury Pass Ticket Container */}
+              <div className="w-full bg-white border border-[#C8A86B]/40 rounded-2xl p-5 shadow-sm mb-6 text-left relative overflow-hidden">
+                <div className="flex items-center justify-between border-b border-dashed border-[#C8A86B]/30 pb-3 mb-3">
+                  <div>
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[#C8A86B] block">Studio Location</span>
+                    <span className="text-xs font-bold text-[#1F1F1F]">Dwarka, Sector 7, New Delhi</span>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-[#1F1F1F] text-[#C8A86B] text-[10px] font-mono font-bold">
+                    #CNL-849201
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-xs mb-3">
+                  <div>
+                    <span className="text-[10px] text-[#6B7280] block">Client Name</span>
+                    <span className="font-bold text-[#1F1F1F]">{formData.name || 'Valued Guest'}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#6B7280] block">Master Stylist</span>
+                    <span className="font-bold text-[#1F1F1F]">{formData.stylist}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#6B7280] block">Service Treatment</span>
+                    <span className="font-bold text-[#1F1F1F] truncate block">{formData.service}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#6B7280] block">Date & Time</span>
+                    <span className="font-bold text-[#C8A86B]">{formData.date} • {formData.time}</span>
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-black/5 flex items-center justify-between text-[10px] text-[#6B7280]">
+                  <span>WhatsApp Concierge: <strong className="text-[#1F1F1F]">+91 94682 64728</strong></span>
+                  <span className="text-emerald-600 font-bold">✓ Direct Sync</span>
+                </div>
+              </div>
+
+              {/* Main WhatsApp Dispatch Action CTA */}
               <div className="w-full flex flex-col gap-3">
                 <button
                   type="button"
                   onClick={() => sendWhatsAppBooking(formData)}
-                  className="w-full py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-4 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold text-xs uppercase tracking-widest hover:opacity-95 transition-all shadow-[0_10px_30px_rgba(37,211,102,0.3)] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>Open Official WhatsApp Chat 💬</span>
+                  <span>Send Reservation Ticket on WhatsApp 💬</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={onClose}
-                  className="py-3 text-xs text-[#6B7280] hover:text-[#1F1F1F] underline transition-colors cursor-pointer"
+                  className="py-2.5 text-xs text-[#6B7280] hover:text-[#1F1F1F] transition-colors cursor-pointer"
                 >
-                  Close Reservation Window
+                  Close & Return to Studio
                 </button>
               </div>
             </div>
