@@ -64,10 +64,10 @@ export const Stylists: React.FC<StylistsProps> = ({ onBookStylist }) => {
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.04 }}
               className="group p-8 rounded-3xl bg-background border border-border hover:border-accent/40 shadow-subtle hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center justify-between"
             >
               <div className="w-full flex flex-col items-center">

@@ -32,10 +32,10 @@ export const AnimeScrollReveal: React.FC<AnimeScrollRevealProps> = ({
       let initialTranslateX = 0;
       let initialTranslateY = 0;
 
-      if (direction === 'up') initialTranslateY = 50;
-      if (direction === 'down') initialTranslateY = -50;
-      if (direction === 'left') initialTranslateX = 50;
-      if (direction === 'right') initialTranslateX = -50;
+      if (direction === 'up') initialTranslateY = 20;
+      if (direction === 'down') initialTranslateY = -20;
+      if (direction === 'left') initialTranslateX = 20;
+      if (direction === 'right') initialTranslateX = -20;
 
       observer = new IntersectionObserver(
         (entries) => {
@@ -48,10 +48,10 @@ export const AnimeScrollReveal: React.FC<AnimeScrollRevealProps> = ({
                   opacity: [0, 1],
                   translateY: direction === 'up' || direction === 'down' ? [initialTranslateY, 0] : 0,
                   translateX: direction === 'left' || direction === 'right' ? [initialTranslateX, 0] : 0,
-                  scale: [0.96, 1],
-                  delay: anime.stagger(120, { start: delay }),
-                  duration: 1000,
-                  easing: 'easeOutCubic',
+                  scale: [0.98, 1],
+                  delay: anime.stagger(35, { start: delay }),
+                  duration: 350,
+                  easing: 'easeOutQuart',
                 });
               } else {
                 anime({
@@ -59,17 +59,17 @@ export const AnimeScrollReveal: React.FC<AnimeScrollRevealProps> = ({
                   opacity: [0, 1],
                   translateY: direction === 'up' || direction === 'down' ? [initialTranslateY, 0] : 0,
                   translateX: direction === 'left' || direction === 'right' ? [initialTranslateX, 0] : 0,
-                  scale: [0.98, 1],
+                  scale: [0.99, 1],
                   delay: delay,
-                  duration: 900,
-                  easing: 'easeOutCubic',
+                  duration: 300,
+                  easing: 'easeOutQuart',
                 });
               }
               observer.disconnect();
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.05 }
       );
 
       observer.observe(el);

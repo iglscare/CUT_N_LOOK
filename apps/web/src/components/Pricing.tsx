@@ -30,10 +30,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 1: Tall Left Photo Card (Span 3 cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
             className="lg:col-span-3 relative overflow-hidden min-h-[380px] lg:min-h-[500px] group cursor-pointer border-r border-b border-black/8"
           >
             <img
@@ -52,10 +52,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 2: Light Sage/Mint Package Card (Span 3 cols) - TOP ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.04 }}
             className="lg:col-span-3 relative bg-[#EBF4EE] p-7 sm:p-8 border-r border-b border-[#D5E6DA] flex flex-col justify-between group z-10"
           >
             {/* Bottom Male Puzzle Tab extending into Row 2 */}
@@ -104,10 +104,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 3: Center Photo Banner Card (Span 3 cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.08 }}
             className="lg:col-span-3 relative overflow-hidden min-h-[240px] lg:min-h-full border-r border-b border-black/8"
           >
             {/* Bottom Male Puzzle Tab extending down */}
@@ -129,10 +129,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 4: Warm Cream Package Card (Span 3 cols) - TOP ROW RIGHT */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.12 }}
             className="lg:col-span-3 relative bg-[#FDF7EE] p-7 sm:p-8 border-b border-[#F3E5CE] flex flex-col justify-between group z-10"
           >
             {/* Bottom Male Puzzle Tab extending down */}
@@ -179,10 +179,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 5: Dark Luxury Signature Suite (Span 4 cols) - MIDDLE ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.04 }}
             className="lg:col-span-4 relative bg-[#181C24] text-white p-8 border-r border-b border-white/10 flex flex-col justify-between shadow-2xl z-20"
           >
             {/* Top Female Puzzle Notch receiving Card 2's bottom tab */}
@@ -245,10 +245,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 6: Clean White Haute Couture VIP Card (Span 4 cols) - MIDDLE ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.3, delay: 0.08 }}
             className="lg:col-span-4 relative bg-white p-8 border-r border-b border-black/8 flex flex-col justify-between z-10"
           >
             {/* Left Female Puzzle Notch receiving Card 5's right tab */}
@@ -307,10 +307,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 7: Soft Lavender/Pink Bridal & Spa Card (Span 4 cols) - MIDDLE ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.12 }}
             className="lg:col-span-4 relative bg-[#F5EEF8] p-8 border-b border-[#E4D5EA] flex flex-col justify-between z-10"
           >
             {/* Left Female Puzzle Notch receiving Card 6's right tab */}
@@ -363,10 +363,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 8: Wide Bottom Left Member Pass Card (Span 6 cols) - BOTTOM ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.3, delay: 0.04 }}
             className="lg:col-span-6 relative bg-white p-8 border-r border-black/8 flex flex-col sm:flex-row items-center gap-6 z-10"
           >
             {/* Right Male Puzzle Tab extending onto Card 9 */}
@@ -406,10 +406,10 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
 
           {/* ITEM 9: Wide Bottom Right VIP Annual Pass Card (Span 6 cols) - BOTTOM ROW */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.08 }}
             className="lg:col-span-6 relative bg-[#181C24] text-white p-8 flex flex-col sm:flex-row items-center gap-6 z-10"
           >
             {/* Left Female Puzzle Notch receiving Card 8's right tab */}

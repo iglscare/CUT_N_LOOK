@@ -17,18 +17,18 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, clas
       initial={
         shouldReduceMotion
           ? { opacity: 0 }
-          : { opacity: 0, y: 50, filter: 'blur(8px)' }
+          : { opacity: 0, y: 20 }
       }
       whileInView={
         shouldReduceMotion
           ? { opacity: 1 }
-          : { opacity: 1, y: 0, filter: 'blur(0px)' }
+          : { opacity: 1, y: 0 }
       }
-      viewport={{ amount: 0.2, once: true }}
+      viewport={{ amount: 0.1, once: true }}
       transition={{
-        duration: 0.9,
+        duration: 0.35,
         delay,
-        ease: [0.22, 1, 0.36, 1] as const,
+        ease: [0.16, 1, 0.3, 1] as const,
       }}
       className={className}
     >

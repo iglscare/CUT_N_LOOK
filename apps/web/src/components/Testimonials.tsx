@@ -17,19 +17,19 @@ export const Testimonials: React.FC = () => {
             anime({
               targets: cardsRef.current.querySelectorAll('.testimonial-card'),
               opacity: [0, 1],
-              translateY: [50, 0],
-              delay: anime.stagger(150),
-              duration: 900,
-              easing: 'easeOutCubic'
+              translateY: [25, 0],
+              delay: anime.stagger(40),
+              duration: 350,
+              easing: 'easeOutQuart'
             });
 
             // Anime.js Star Twinkle Stagger
             anime({
               targets: cardsRef.current.querySelectorAll('.star-icon'),
-              scale: [0.5, 1.2, 1],
+              scale: [0.5, 1.1, 1],
               opacity: [0, 1],
-              delay: anime.stagger(60, { start: 400 }),
-              duration: 600,
+              delay: anime.stagger(30, { start: 100 }),
+              duration: 300,
               easing: 'easeOutBack'
             });
 
