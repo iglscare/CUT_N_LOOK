@@ -46,7 +46,7 @@ export const ImageRevealBackground: React.FC = () => {
 
         const maskCss = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.35) 75%, rgba(0,0,0,0) 100%)`;
 
-        revealRef.current.style.WebkitMaskImage = maskCss;
+        revealRef.current.style.webkitMaskImage = maskCss;
         revealRef.current.style.maskImage = maskCss;
       }
 
