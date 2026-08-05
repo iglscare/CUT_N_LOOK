@@ -27,13 +27,18 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           className="lg:col-span-6 max-w-xl bg-gradient-to-br from-white/80 via-white/65 to-white/50 backdrop-blur-2xl backdrop-saturate-150 rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-white/90 shadow-[inset_0_1.5px_0px_rgba(255,255,255,0.9),0_25px_60px_rgba(0,0,0,0.08)] flex flex-col justify-between"
         >
           <div>
-            {/* Tagline Header */}
-            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            {/* Tagline Header & Instagram Profile Link */}
+            <a
+              href="https://www.instagram.com/cut_n_looks_/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 mb-4 sm:mb-6 hover:opacity-80 transition-opacity group"
+            >
               <span className="w-8 h-[2px] bg-[#C8A86B]" />
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.25em] text-[#C8A86B] uppercase">
-                PREMIUM BEAUTY. PERSONAL TOUCH.
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.25em] text-[#C8A86B] uppercase flex items-center gap-1.5">
+                @CUT_N_LOOKS_ • HAUTE BEAUTY
               </span>
-            </div>
+            </a>
 
             {/* Main Editorial Headline */}
             <h1 className="text-4xl sm:text-7xl lg:text-8xl font-serif tracking-tight text-[#1F1F1F] leading-[0.95] mb-6 sm:mb-8 select-none">

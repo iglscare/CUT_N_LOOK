@@ -29,10 +29,10 @@ export const Footer: React.FC = () => {
             {/* Social Icons with 6° Rotation on Hover */}
             <div className="flex items-center gap-3 pt-2">
               {[
-                { icon: Instagram, href: 'https://instagram.com' },
-                { icon: Facebook, href: 'https://facebook.com' },
-                { icon: Twitter, href: 'https://twitter.com' },
-                { icon: MessageCircle, href: 'https://whatsapp.com' },
+                { icon: Instagram, href: 'https://www.instagram.com/cut_n_looks_/?hl=en', label: '@cut_n_looks_' },
+                { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
+                { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+                { icon: MessageCircle, href: 'https://wa.me/', label: 'WhatsApp' },
               ].map((item, idx) => (
                 <motion.a
                   key={idx}
@@ -42,6 +42,7 @@ export const Footer: React.FC = () => {
                   whileHover={{ scale: 1.1, rotate: 6 }}
                   transition={{ duration: 0.2 }}
                   className="w-9 h-9 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#202A36] hover:text-[#C8A86B] hover:border-[#C8A86B]/50 transition-colors shadow-sm"
+                  aria-label={item.label}
                 >
                   <item.icon className="w-4 h-4" />
                 </motion.a>
