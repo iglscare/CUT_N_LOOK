@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-[#6B7280] text-xs sm:text-sm leading-relaxed font-normal">
-              A world-class luxury salon dedicated to precision hair architecture, balayage coloring, and organic skincare spa.
+              Pioneer in Beauty and Grooming services. Top Haircuts, Precision Styling, Balayage Coloring, Royal Bridal Suites, & Nail Art.
             </p>
 
             {/* Social Icons with 6° Rotation on Hover */}
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
                 { icon: Instagram, href: 'https://www.instagram.com/cut_n_looks_/?hl=en', label: '@cut_n_looks_' },
                 { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
                 { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                { icon: MessageCircle, href: 'https://wa.me/', label: 'WhatsApp' },
+                { icon: MessageCircle, href: 'https://wa.me/919910346363', label: 'WhatsApp' },
               ].map((item, idx) => (
                 <motion.a
                   key={idx}
@@ -55,16 +55,8 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A86B]">Studio Hours</h4>
             <div className="space-y-2 text-xs text-[#6B7280] font-medium">
               <div className="flex justify-between py-1.5 border-b border-black/8">
-                <span>Monday - Friday</span>
-                <span className="text-[#202A36] font-bold">9:00 AM - 8:00 PM</span>
-              </div>
-              <div className="flex justify-between py-1.5 border-b border-black/8">
-                <span>Saturday</span>
-                <span className="text-[#202A36] font-bold">8:00 AM - 7:00 PM</span>
-              </div>
-              <div className="flex justify-between py-1.5 border-b border-black/8">
-                <span>Sunday</span>
-                <span className="text-[#202A36] font-bold">10:00 AM - 6:00 PM</span>
+                <span>Monday - Sunday</span>
+                <span className="text-[#202A36] font-bold">10:00 AM - 9:00 PM</span>
               </div>
             </div>
           </div>
@@ -83,19 +75,19 @@ export const Footer: React.FC = () => {
 
           {/* Contact Column */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A86B]">Fifth Ave Studio</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C8A86B]">Dwarka Studio</h4>
             <div className="space-y-3 text-xs text-[#6B7280] font-medium">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#C8A86B] shrink-0 mt-0.5" />
-                <span className="text-[#202A36]">740 Fifth Avenue, Suite 1200<br />New York, NY 10019</span>
+                <span className="text-[#202A36]">D-451, 1st Floor, Ramphal Chowk,<br />Sector 7, Dwarka, New Delhi 110075</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#C8A86B] shrink-0" />
-                <span className="text-[#202A36]">+1 (212) 555-0192</span>
+                <a href="tel:+919910346363" className="text-[#202A36] hover:text-[#C8A86B] transition-colors font-semibold">+91 99103 46363</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#C8A86B] shrink-0" />
-                <span className="text-[#202A36]">concierge@cutnlooks.com</span>
+                <a href="mailto:info@cutnlooks.in" className="text-[#202A36] hover:text-[#C8A86B] transition-colors font-semibold">info@cutnlooks.in</a>
               </div>
             </div>
           </div>

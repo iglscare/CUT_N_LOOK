@@ -346,21 +346,21 @@ export default function BookPage() {
               {/* Studio Info Card */}
               <div className="bg-white border border-black/10 rounded-[32px] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
                 <h3 className="text-xl font-serif font-bold text-[#202A36] mb-6">
-                  Fifth Ave Studio
+                  Dwarka, New Delhi Studio
                 </h3>
 
                 <div className="space-y-4 text-xs text-[#6B7280]">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-[#C8A86B] shrink-0 mt-0.5" />
-                    <span>740 Fifth Avenue, Suite 1200<br />New York, NY 10019</span>
+                    <span className="text-[#202A36] font-medium">D-451, 1st Floor, Ramphal Chowk,<br />Sector 7, Dwarka, New Delhi 110075</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-[#C8A86B] shrink-0" />
-                    <span>+1 (212) 555-0192</span>
+                    <a href="tel:+919910346363" className="text-[#202A36] font-bold hover:text-[#C8A86B] transition-colors">+91 99103 46363</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4 text-[#C8A86B] shrink-0" />
-                    <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+                    <span className="text-[#202A36] font-medium">Mon - Sun: 10:00 AM - 9:00 PM</span>
                   </div>
                 </div>
 

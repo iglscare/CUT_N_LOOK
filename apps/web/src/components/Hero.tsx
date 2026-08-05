@@ -141,21 +141,37 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
 
       {/* Tour Video Modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+          <div className="relative w-full max-w-md bg-[#181C24] border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col items-center text-center text-white">
             <button
               onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-              title="Cut N Looks Studio Showcase"
-              className="w-full h-full border-0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+
+            <div className="w-14 h-14 rounded-full bg-[#C8A86B]/20 flex items-center justify-center mb-4 text-[#C8A86B]">
+              <Sparkles className="w-7 h-7 text-[#C8A86B]" />
+            </div>
+
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C8A86B] mb-1">
+              INSTAGRAM SHOWCASE REELS
+            </span>
+            <h3 className="text-2xl font-serif font-bold text-white mb-2">
+              @cut_n_looks_ Official
+            </h3>
+            <p className="text-xs text-white/70 leading-relaxed mb-6">
+              Watch live hair transformations, bridal suites, and balayage reels directly on our Instagram profile.
+            </p>
+
+            <a
+              href="https://www.instagram.com/cut_n_looks_/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-4 rounded-full bg-[#C8A86B] text-[#181C24] font-bold text-xs uppercase tracking-wider hover:bg-[#D4B579] transition-colors shadow-md flex items-center justify-center gap-2"
+            >
+              <span>Watch @cut_n_looks_ Reels ↗</span>
+            </a>
           </div>
         </div>
       )}
