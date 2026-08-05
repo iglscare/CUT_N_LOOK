@@ -19,12 +19,12 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       <ImageRevealBackground />
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-140px)]">
-        {/* Left Column: White Editorial Content Card */}
+        {/* Left Column: Frosted Glass Editorial Content Card */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-6 max-w-xl bg-white/95 backdrop-blur-md rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-black/8 shadow-[0_20px_70px_rgba(0,0,0,0.06)] flex flex-col justify-between"
+          className="lg:col-span-6 max-w-xl bg-white/30 sm:bg-white/85 backdrop-blur-xl rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-white/60 shadow-[0_20px_70px_rgba(0,0,0,0.08)] flex flex-col justify-between"
         >
           <div>
             {/* Tagline Header */}
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white border border-black/15 text-[#1F1F1F] font-bold text-xs uppercase tracking-wider hover:border-[#1F1F1F] transition-colors cursor-pointer shadow-sm"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/70 backdrop-blur-md border border-black/15 text-[#1F1F1F] font-bold text-xs uppercase tracking-wider hover:border-[#1F1F1F] hover:bg-white transition-colors cursor-pointer shadow-sm"
                 >
                   Explore Services
                 </motion.button>
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsVideoModalOpen(true)}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1F1F1F] hover:bg-[#FAF8F5] transition-colors cursor-pointer shadow-sm"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/70 backdrop-blur-md border border-black/10 flex items-center justify-center text-[#1F1F1F] hover:bg-white transition-colors cursor-pointer shadow-sm"
                 aria-label="Play tour video"
               >
                 <Play className="w-4 h-4 fill-[#1F1F1F] ml-0.5" />
