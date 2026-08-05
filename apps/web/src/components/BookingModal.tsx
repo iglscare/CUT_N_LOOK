@@ -41,13 +41,27 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   if (!isOpen) return null;
 
+  const sendWhatsAppBooking = (data: typeof formData) => {
+    const textMessage = `✨ *CUT N LOOKS SALON — APPOINTMENT RESERVATION* ✨\n\n` +
+      `👤 *Client Name:* ${data.name || 'Valued Client'}\n` +
+      `📞 *Phone Number:* ${data.phone}\n` +
+      `✉️ *Email:* ${data.email || 'N/A'}\n\n` +
+      `💇‍♀️ *Treatment Service:* ${data.service}\n` +
+      `✂️ *Master Stylist:* ${data.stylist}\n` +
+      `📅 *Date:* ${data.date}\n` +
+      `⏰ *Time Slot:* ${data.time}\n\n` +
+      `📍 *Studio Location:* D-451, 1st Floor, Ramphal Chowk, Sector 7, Dwarka, New Delhi 110075\n\n` +
+      `Please confirm my reservation. Thank you!`;
+
+    const encodedMessage = encodeURIComponent(textMessage);
+    const whatsappUrl = `https://wa.me/919910346363?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      onClose();
-    }, 2800);
+    sendWhatsAppBooking(formData);
   };
 
   const servicesList = [
@@ -91,16 +105,35 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           </button>
 
           {isSubmitted ? (
-            <div className="py-12 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center justify-center mb-6 shadow-sm">
-                <CheckCircle2 className="w-10 h-10 animate-bounce" />
+            <div className="py-8 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 flex items-center justify-center mb-4 shadow-sm">
+                <CheckCircle2 className="w-9 h-9" />
               </div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-1">
+                AUTOMATED DISPATCH READY
+              </span>
               <h3 className="text-2xl font-serif font-bold text-[#202A36] mb-2">
-                Reservation Confirmed
+                Sending Reservation to WhatsApp
               </h3>
-              <p className="text-sm text-[#6B7280] max-w-sm leading-relaxed">
-                Thank you, <span className="font-bold text-[#202A36]">{formData.name || 'Valued Client'}</span>. Your private session for <span className="font-bold text-[#202A36]">{formData.date}</span> at <span className="font-bold text-[#202A36]">{formData.time}</span> with <span className="font-bold text-[#202A36]">{formData.stylist}</span> has been confirmed at our Dwarka, New Delhi studio.
+              <p className="text-xs text-[#6B7280] max-w-sm leading-relaxed mb-6">
+                Your reservation for <span className="font-bold text-[#202A36]">{formData.service}</span> with <span className="font-bold text-[#202A36]">{formData.stylist}</span> is being dispatched to our WhatsApp desk (+91 99103 46363).
               </p>
+
+              <button
+                type="button"
+                onClick={() => sendWhatsAppBooking(formData)}
+                className="w-full py-4 rounded-full bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#20bd5a] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer mb-3"
+              >
+                <span>Re-open WhatsApp Chat 💬</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={onClose}
+                className="text-xs text-[#6B7280] hover:text-[#202A36] underline cursor-pointer"
+              >
+                Close Reservation Modal
+              </button>
             </div>
           ) : (
             <div className="relative z-10">

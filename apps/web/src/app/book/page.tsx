@@ -36,9 +36,27 @@ export default function BookPage() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const sendWhatsAppBooking = (data: typeof formData) => {
+    const textMessage = `✨ *CUT N LOOKS SALON — APPOINTMENT RESERVATION* ✨\n\n` +
+      `👤 *Client Name:* ${data.name || 'Valued Client'}\n` +
+      `📞 *Phone Number:* ${data.phone}\n` +
+      `✉️ *Email:* ${data.email || 'N/A'}\n\n` +
+      `💇‍♀️ *Treatment Service:* ${data.service}\n` +
+      `✂️ *Master Stylist:* ${data.stylist}\n` +
+      `📅 *Date:* ${data.date}\n` +
+      `⏰ *Time Slot:* ${data.time}\n\n` +
+      `📍 *Studio Location:* D-451, 1st Floor, Ramphal Chowk, Sector 7, Dwarka, New Delhi 110075\n\n` +
+      `Please confirm my reservation. Thank you!`;
+
+    const encodedMessage = encodeURIComponent(textMessage);
+    const whatsappUrl = `https://wa.me/919910346363?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    sendWhatsAppBooking(formData);
   };
 
   const servicesList = [
