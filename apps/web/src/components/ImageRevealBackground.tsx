@@ -10,13 +10,15 @@ const BG_IMAGE_2 =
 
 export const ImageRevealBackground: React.FC = () => {
   const revealRef = useRef<HTMLDivElement>(null);
+  const bg1Ref = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const smoothRef = useRef({ x: 0, y: 0 });
   const animFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const defaultX = typeof window !== 'undefined' ? window.innerWidth * 0.72 : 800;
-    const defaultY = typeof window !== 'undefined' ? window.innerHeight * 0.45 : 400;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+    const defaultX = typeof window !== 'undefined' ? (isMobile ? window.innerWidth * 0.5 : window.innerWidth * 0.72) : 400;
+    const defaultY = typeof window !== 'undefined' ? (isMobile ? window.innerHeight * 0.70 : window.innerHeight * 0.45) : 400;
 
     mouseRef.current = { x: defaultX, y: defaultY };
     smoothRef.current = { x: defaultX, y: defaultY };
@@ -25,24 +27,25 @@ export const ImageRevealBackground: React.FC = () => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
-    const handleTouchMove = (e: TouchEvent) => {
+    const handleTouch = (e: TouchEvent) => {
       if (e.touches[0]) {
         mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
       }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchmove', handleTouch, { passive: true });
+    window.addEventListener('touchstart', handleTouch, { passive: true });
 
     const updateSpotlight = () => {
       if (revealRef.current) {
-        smoothRef.current.x += (mouseRef.current.x - smoothRef.current.x) * 0.12;
-        smoothRef.current.y += (mouseRef.current.y - smoothRef.current.y) * 0.12;
+        smoothRef.current.x += (mouseRef.current.x - smoothRef.current.x) * 0.14;
+        smoothRef.current.y += (mouseRef.current.y - smoothRef.current.y) * 0.14;
 
         const cx = Math.round(smoothRef.current.x);
         const cy = Math.round(smoothRef.current.y);
         const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
-        const radius = Math.round(Math.min(220, Math.max(120, width * 0.10)));
+        const radius = Math.round(Math.min(220, Math.max(100, width * (width < 768 ? 0.28 : 0.10))));
 
         const maskCss = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.35) 75%, rgba(0,0,0,0) 100%)`;
 
@@ -57,7 +60,8 @@ export const ImageRevealBackground: React.FC = () => {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchmove', handleTouch);
+      window.removeEventListener('touchstart', handleTouch);
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
   }, []);
@@ -66,20 +70,19 @@ export const ImageRevealBackground: React.FC = () => {
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Base Layer: BG_IMAGE_1 */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300"
+        ref={bg1Ref}
+        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300 bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
         style={{
           backgroundImage: `url("${BG_IMAGE_1}")`,
-          backgroundPosition: 'calc(50% + 380px) center',
         }}
       />
 
       {/* Spotlight Reveal Layer: BG_IMAGE_2 */}
       <div
         ref={revealRef}
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300"
+        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300 bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
         style={{
           backgroundImage: `url("${BG_IMAGE_2}")`,
-          backgroundPosition: 'calc(50% + 380px) center',
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat',
         }}
