@@ -16,7 +16,7 @@ export default function AdminDashboardPage() {
 
   // Mock Data
   const metrics = {
-    monthlyRevenue: '$24,850.00',
+    monthlyRevenue: '₹18,45,000.00',
     revenueGrowth: '+18.4%',
     totalAppointments: 342,
     activeCustomers: 890,
@@ -24,11 +24,11 @@ export default function AdminDashboardPage() {
   };
 
   const appointmentsList = [
-    { id: 'APT-1092', customer: 'Alexander Vance', service: 'Executive Hair Architecture', stylist: 'Marcus Thorne', time: '10:30 AM', price: '$65', status: 'CONFIRMED' },
-    { id: 'APT-1093', customer: 'Elena Rostova', service: 'Hydra-Radiance Facial Spa', stylist: 'Sophia Lin', time: '11:45 AM', price: '$95', status: 'IN_PROGRESS' },
-    { id: 'APT-1094', customer: 'David Beckham', service: 'Royal Beard Sculpture', stylist: 'Marcus Thorne', time: '01:15 PM', price: '$45', status: 'PENDING' },
-    { id: 'APT-1095', customer: 'Seraphina Cruz', service: 'Platinum Hair Rejuvenation', stylist: 'Chloe Dubois', time: '02:30 PM', price: '$120', status: 'CONFIRMED' },
-    { id: 'APT-1096', customer: 'Jameson Hayes', service: 'Executive Hair Architecture', stylist: 'Sophia Lin', time: '04:00 PM', price: '$65', status: 'COMPLETED' },
+    { id: 'APT-1092', customer: 'Alexander Vance', service: 'Executive Hair Architecture', stylist: 'Marcus Thorne', time: '10:30 AM', price: '₹1,999', status: 'CONFIRMED' },
+    { id: 'APT-1093', customer: 'Elena Rostova', service: 'Hydra-Radiance Facial Spa', stylist: 'Sophia Lin', time: '11:45 AM', price: '₹4,999', status: 'IN_PROGRESS' },
+    { id: 'APT-1094', customer: 'David Beckham', service: 'Royal Beard Sculpture', stylist: 'Marcus Thorne', time: '01:15 PM', price: '₹1,499', status: 'PENDING' },
+    { id: 'APT-1095', customer: 'Seraphina Cruz', service: 'Platinum Hair Rejuvenation', stylist: 'Chloe Dubois', time: '02:30 PM', price: '₹5,999', status: 'CONFIRMED' },
+    { id: 'APT-1096', customer: 'Jameson Hayes', service: 'Executive Hair Architecture', stylist: 'Sophia Lin', time: '04:00 PM', price: '₹1,999', status: 'COMPLETED' },
   ];
 
   const handleAiAction = (actionType: string) => {
@@ -38,11 +38,11 @@ export default function AdminDashboardPage() {
     setTimeout(() => {
       setIsGeneratingAi(false);
       if (actionType === 'instagram') {
-        setAiOutput("📱 **Instagram Campaign Suggestion:**\n\n✨ 'Transform Your Style with Royal Beard Sculpture & Hot Towel Detox!'\n📍 Highlight Marcus Thorne's precision shave technique.\n🎁 Offer 15% bonus loyalty points for weekend bookings via SkyElite Web App.\n#SkyEliteGrooming #LuxurySalon #BeardCare #BarberShop");
+        setAiOutput("📱 **Instagram Campaign Suggestion:**\n\n✨ 'Transform Your Style with Royal Beard Sculpture & Hot Towel Detox!'\n📍 Highlight Marcus Thorne's precision shave technique.\n🎁 Offer 15% bonus loyalty points for weekend bookings via Cut N Looks Web App.\n#CutNLooks #LuxurySalon #BeardCare #BarberShop");
       } else if (actionType === 'retention') {
-        setAiOutput("📈 **AI Customer Retention Insights:**\n\n- 42 clients haven't visited in over 45 days.\n- Recommended Action: Trigger automated WhatsApp SMS offering 'Complimentary Scalp Detox with your next haircut'.\n- Estimated Revenue Recovery: $2,730");
+        setAiOutput("📈 **AI Customer Retention Insights:**\n\n- 42 clients haven't visited in over 45 days.\n- Recommended Action: Trigger automated WhatsApp SMS offering 'Complimentary Scalp Detox with your next haircut'.\n- Estimated Revenue Recovery: ₹2,25,000");
       } else if (actionType === 'revenue') {
-        setAiOutput("📊 **Monthly Revenue Summary:**\n\n- Haircut & Styling: $11,200 (45%)\n- Color & Chemical Treatments: $7,800 (31%)\n- Facial & Spa Services: $5,850 (24%)\n- Peak hours: Fridays 2:00 PM - 7:00 PM");
+        setAiOutput("📊 **Monthly Revenue Summary:**\n\n- Haircut & Styling: ₹8,40,000 (45%)\n- Color & Chemical Treatments: ₹5,85,000 (31%)\n- Facial & Spa Services: ₹4,20,000 (24%)\n- Peak hours: Fridays 2:00 PM - 7:00 PM");
       }
     }, 1200);
   };
@@ -239,15 +239,15 @@ export default function AdminDashboardPage() {
                 <div className="flex flex-col gap-3 text-xs">
                   <div className="flex items-center justify-between p-3 rounded-lg bg-obsidian-900/60 border border-obsidian-700">
                     <span className="font-semibold text-white">Marcus Thorne</span>
-                    <span className="text-skygold-400 font-bold">$8,450 / 92 Appointments</span>
+                    <span className="text-skygold-400 font-bold">₹6,45,000 / 92 Appointments</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-obsidian-900/60 border border-obsidian-700">
                     <span className="font-semibold text-white">Sophia Lin</span>
-                    <span className="text-skygold-400 font-bold">$7,200 / 84 Appointments</span>
+                    <span className="text-skygold-400 font-bold">₹5,20,000 / 84 Appointments</span>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-obsidian-900/60 border border-obsidian-700">
                     <span className="font-semibold text-white">Chloe Dubois</span>
-                    <span className="text-skygold-400 font-bold">$6,100 / 68 Appointments</span>
+                    <span className="text-skygold-400 font-bold">₹4,80,000 / 68 Appointments</span>
                   </div>
                 </div>
               </Card>

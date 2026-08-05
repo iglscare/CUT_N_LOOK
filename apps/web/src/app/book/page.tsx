@@ -42,12 +42,12 @@ export default function BookPage() {
   };
 
   const servicesList = [
-    { title: 'Signature Precision Cut & Blowout', price: '$180', time: '75 min', category: 'Hair Architecture' },
-    { title: 'Haute Balayage & Glossing Ritual', price: '$350', time: '150 min', category: 'Coloring' },
-    { title: 'Royal Couture Bridal Suite', price: '$650', time: '210 min', category: 'Bridal' },
-    { title: 'Dewy Glass Skin Facial Spa', price: '$240', time: '90 min', category: 'Skincare' },
-    { title: 'Keratin Silk Press Ritual', price: '$280', time: '120 min', category: 'Hair Architecture' },
-    { title: 'Botanical Scalp & Hair Detox', price: '$160', time: '60 min', category: 'Skincare' }
+    { title: 'Signature Precision Cut & Blowout', price: '₹1,999', time: '75 min', category: 'Hair Architecture' },
+    { title: 'Haute Balayage & Glossing Ritual', price: '₹7,999', time: '150 min', category: 'Coloring' },
+    { title: 'Royal Couture Bridal Suite', price: '₹14,999', time: '210 min', category: 'Bridal' },
+    { title: 'Dewy Glass Skin Facial Spa', price: '₹4,999', time: '90 min', category: 'Skincare' },
+    { title: 'Keratin Silk Press Ritual', price: '₹5,999', time: '120 min', category: 'Hair Architecture' },
+    { title: 'Botanical Scalp & Hair Detox', price: '₹2,999', time: '60 min', category: 'Skincare' }
   ];
 
   const stylistsList = [

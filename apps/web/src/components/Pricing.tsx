@@ -74,7 +74,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-serif font-bold text-[#1F3E2C]">$95</span>
+                <span className="text-4xl font-serif font-bold text-[#1F3E2C]">₹1,999</span>
                 <span className="text-xs text-[#5C7D68] uppercase font-medium">/ session</span>
               </div>
 
@@ -149,7 +149,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-serif font-bold text-[#3B2E17]">$65</span>
+                <span className="text-4xl font-serif font-bold text-[#3B2E17]">₹1,499</span>
                 <span className="text-xs text-[#8A7550] uppercase font-medium">/ session</span>
               </div>
 
@@ -206,7 +206,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-5xl font-serif font-bold text-[#C8A86B]">$185</span>
+                <span className="text-5xl font-serif font-bold text-[#C8A86B]">₹3,999</span>
                 <span className="text-xs text-white/60 uppercase font-medium">/ session</span>
               </div>
 
@@ -269,7 +269,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-5xl font-serif font-bold text-[#1F1F1F]">$350</span>
+                <span className="text-5xl font-serif font-bold text-[#1F1F1F]">₹7,999</span>
                 <span className="text-xs text-[#888888] uppercase font-medium">/ session</span>
               </div>
 
@@ -329,7 +329,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
               </p>
 
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-5xl font-serif font-bold text-[#421D4C]">$280</span>
+                <span className="text-5xl font-serif font-bold text-[#421D4C]">₹5,999</span>
                 <span className="text-xs text-[#7B5986] uppercase font-medium">/ package</span>
               </div>
 
@@ -391,7 +391,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
                   Enjoy unlimited weekly blowouts, 20% off all retail products & priority booking.
                 </p>
                 <div className="text-3xl font-serif font-bold text-[#1F1F1F] mb-4">
-                  $149 <span className="text-xs font-normal text-[#888888]">/ month</span>
+                  ₹2,999 <span className="text-xs font-normal text-[#888888]">/ month</span>
                 </div>
               </div>
 
@@ -434,7 +434,7 @@ export const Pricing: React.FC<PricingProps> = ({ onBookClick }) => {
                   Full year of unlimited styling, custom color transformations & private concierge.
                 </p>
                 <div className="text-3xl font-serif font-bold text-[#C8A86B] mb-4">
-                  $1,500 <span className="text-xs font-normal text-white/60">/ year</span>
+                  ₹29,999 <span className="text-xs font-normal text-white/60">/ year</span>
                 </div>
               </div>
 

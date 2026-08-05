@@ -51,12 +51,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
   };
 
   const servicesList = [
-    { title: 'Signature Precision Cut & Blowout', price: '$180', time: '75m' },
-    { title: 'Haute Balayage & Glossing Ritual', price: '$350', time: '150m' },
-    { title: 'Royal Couture Bridal Suite', price: '$650', time: '210m' },
-    { title: 'Dewy Glass Skin Facial Spa', price: '$240', time: '90m' },
-    { title: 'Keratin Silk Press Ritual', price: '$280', time: '120m' },
-    { title: 'Botanical Scalp & Hair Detox', price: '$160', time: '60m' }
+    { title: 'Signature Precision Cut & Blowout', price: '₹1,999', time: '75m' },
+    { title: 'Haute Balayage & Glossing Ritual', price: '₹7,999', time: '150m' },
+    { title: 'Royal Couture Bridal Suite', price: '₹14,999', time: '210m' },
+    { title: 'Dewy Glass Skin Facial Spa', price: '₹4,999', time: '90m' },
+    { title: 'Keratin Silk Press Ritual', price: '₹5,999', time: '120m' },
+    { title: 'Botanical Scalp & Hair Detox', price: '₹2,999', time: '60m' }
   ];
 
   const stylistsList = [
