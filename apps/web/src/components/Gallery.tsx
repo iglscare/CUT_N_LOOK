@@ -66,7 +66,7 @@ export const Gallery: React.FC = () => {
     : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 sm:py-32 px-4 sm:px-8 bg-[#FAFAF8] text-[#1F1F1F] select-none">
+    <section id="gallery" className="pt-12 sm:pt-16 pb-20 px-4 sm:px-8 bg-[#FAFAF8] text-[#1F1F1F] select-none">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
