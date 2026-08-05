@@ -19,12 +19,12 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       <ImageRevealBackground />
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-140px)]">
-        {/* Left Column: Clean Solid White Editorial Content Card */}
+        {/* Left Column: Premium Liquid Glass Editorial Content Card */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-6 max-w-xl bg-white/95 backdrop-blur-md rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-black/8 shadow-[0_20px_70px_rgba(0,0,0,0.06)] flex flex-col justify-between"
+          className="lg:col-span-6 max-w-xl bg-gradient-to-br from-white/80 via-white/65 to-white/50 backdrop-blur-2xl backdrop-saturate-150 rounded-[32px] sm:rounded-[50px] p-6 sm:p-12 border border-white/90 shadow-[inset_0_1.5px_0px_rgba(255,255,255,0.9),0_25px_60px_rgba(0,0,0,0.08)] flex flex-col justify-between"
         >
           <div>
             {/* Tagline Header */}
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             </h1>
 
             {/* Subtext */}
-            <p className="text-[#5A5A5A] text-xs sm:text-base font-normal leading-relaxed mb-8 sm:mb-10 max-w-md">
+            <p className="text-[#3A3A3A] text-xs sm:text-base font-normal leading-relaxed mb-8 sm:mb-10 max-w-md">
               Where expertise meets artistry. Every appointment is crafted to bring out your most confident self.
             </p>
 
@@ -52,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#C8A86B] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#B8975B] transition-colors shadow-md flex items-center gap-2.5 cursor-pointer"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#C8A86B] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#B8975B] transition-colors shadow-[0_8px_20px_rgba(200,168,107,0.3)] flex items-center gap-2.5 cursor-pointer"
                 >
                   <span>Book Experience</span>
                   <ArrowRight className="w-4 h-4 text-white" />
@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white border border-black/15 text-[#1F1F1F] font-bold text-xs uppercase tracking-wider hover:border-[#1F1F1F] transition-colors cursor-pointer shadow-sm"
+                  className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/70 backdrop-blur-md border border-white/90 text-[#1F1F1F] font-bold text-xs uppercase tracking-wider hover:bg-white hover:border-black/20 transition-all cursor-pointer shadow-sm"
                 >
                   Explore Services
                 </motion.button>
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsVideoModalOpen(true)}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-[#1F1F1F] hover:bg-[#FAF8F5] transition-colors cursor-pointer shadow-sm"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/70 backdrop-blur-md border border-white/90 flex items-center justify-center text-[#1F1F1F] hover:bg-white transition-all cursor-pointer shadow-sm"
                 aria-label="Play tour video"
               >
                 <Play className="w-4 h-4 fill-[#1F1F1F] ml-0.5" />
