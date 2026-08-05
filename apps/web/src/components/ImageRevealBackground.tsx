@@ -67,39 +67,26 @@ export const ImageRevealBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#F5F4F0]">
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#F4F1EA]">
       {/* Base Layer: BG_IMAGE_1 */}
       <div
         ref={bg1Ref}
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300 bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
         style={{
           backgroundImage: `url("${BG_IMAGE_1}")`,
-          maskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%)',
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 100%)',
         }}
       />
 
       {/* Spotlight Reveal Layer: BG_IMAGE_2 */}
       <div
         ref={revealRef}
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300 bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
         style={{
           backgroundImage: `url("${BG_IMAGE_2}")`,
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat',
         }}
       />
-
-      {/* Soft Vignette Overlay to ensure 100% smooth edge transition */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#F5F4F0] via-transparent to-transparent pointer-events-none opacity-40 lg:opacity-20" />
-
-      {/* Subtle Parallax Grid Overlay */}
-      <svg className="absolute inset-0 w-full h-full opacity-8 pointer-events-none stroke-[#64748b]" strokeWidth="0.6">
-        <pattern id="futuristicGrid" width="48" height="48" patternUnits="userSpaceOnUse">
-          <path d="M 48 0 L 0 0 0 48" fill="none" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#futuristicGrid)" />
-      </svg>
     </div>
   );
 };
