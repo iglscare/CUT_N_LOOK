@@ -33,18 +33,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 pt-4 sm:pt-6">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-8 pt-3 sm:pt-6">
       <div className="max-w-[1380px] mx-auto">
         <div
-          className={`w-full rounded-full px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between transition-all duration-500 border ${
+          className={`w-full rounded-full px-4 sm:px-10 h-14 sm:h-20 flex items-center justify-between transition-all duration-500 border ${
             isScrolled
               ? 'bg-white/95 backdrop-blur-md border-black/10 shadow-lg'
               : 'bg-white/90 backdrop-blur-sm border-black/5 shadow-sm'
           }`}
         >
           {/* Logo & Subtitle */}
-          <Link href="/" className="flex items-center gap-3">
-            <span className="text-xl sm:text-2xl font-serif font-bold tracking-tight text-[#1F1F1F]">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3">
+            <span className="text-lg sm:text-2xl font-serif font-bold tracking-tight text-[#1F1F1F]">
               Cut N Looks<span className="text-[#C8A86B]">.</span>
             </span>
             <span className="hidden lg:inline-block text-[9px] font-bold tracking-[0.2em] text-[#8E8E8E] uppercase border-l border-black/15 pl-3">
@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
             </span>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation Links (Desktop) */}
           <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-[#4A4A4A]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -77,53 +77,68 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
             })}
           </nav>
 
-          {/* Book Experience CTA */}
-          <div className="flex items-center gap-3">
+          {/* Book Experience CTA & Mobile Toggle */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link href="/book" onClick={onBookClick}>
-              <button className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#C8A86B] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#B8975B] transition-colors duration-300 shadow-sm flex items-center gap-2 cursor-pointer">
-                <Calendar className="w-3.5 h-3.5 text-white" />
-                <span>Book Experience</span>
+              <button className="px-3.5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#C8A86B] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#B8975B] transition-colors duration-300 shadow-sm flex items-center gap-1.5 sm:gap-2 cursor-pointer">
+                <Calendar className="w-3.5 h-3.5 text-white shrink-0" />
+                <span>
+                  <span className="hidden sm:inline">Book Experience</span>
+                  <span className="sm:hidden text-[11px]">Book</span>
+                </span>
               </button>
             </Link>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-[#1F1F1F] hover:text-[#C8A86B] transition-colors"
+              className="md:hidden p-1.5 rounded-full bg-black/5 text-[#1F1F1F] hover:text-[#C8A86B] transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Glass Slide-Down Drawer Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden max-w-md mx-auto mt-3 bg-white border border-black/10 rounded-3xl p-6 shadow-2xl flex flex-col gap-4 text-xs font-semibold uppercase tracking-widest text-[#1F1F1F]"
+            initial={{ opacity: 0, y: -15, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -15, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            className="md:hidden max-w-md mx-auto mt-2 bg-white/98 backdrop-blur-xl border border-black/10 rounded-3xl p-6 shadow-2xl flex flex-col gap-3 text-xs font-semibold uppercase tracking-widest text-[#1F1F1F] z-50"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-black/5 hover:text-[#C8A86B]"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="flex items-center justify-between pb-3 border-b border-black/5 text-[10px] text-[#8E8E8E] tracking-widest">
+              <span>NAVIGATION MENU</span>
+              <span>CUT N LOOKS STUDIO</span>
+            </div>
+
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`py-3 px-4 rounded-2xl flex items-center justify-between transition-colors ${
+                    isActive ? 'bg-[#F4F1EA] text-[#C8A86B] font-bold' : 'hover:bg-black/5'
+                  }`}
+                >
+                  <span className="text-sm font-serif normal-case tracking-normal">{link.label}</span>
+                  <span className="text-[10px] text-[#8E8E8E] uppercase tracking-widest">Explore →</span>
+                </Link>
+              );
+            })}
+
             <Link
               href="/book"
               onClick={() => { setMobileMenuOpen(false); onBookClick?.(); }}
-              className="py-3 bg-[#C8A86B] text-white rounded-full font-bold text-center uppercase tracking-wider mt-2 shadow-sm"
+              className="py-3.5 bg-[#C8A86B] text-white rounded-full font-bold text-center uppercase tracking-wider mt-2 shadow-md hover:bg-[#B8975B] transition-colors text-xs"
             >
-              Book Experience
+              Book Your Appointment
             </Link>
           </motion.div>
         )}
