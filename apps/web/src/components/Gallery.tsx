@@ -113,12 +113,12 @@ export const Gallery: React.FC = () => {
           })}
         </div>
 
-        {/* 3D INTERACTIVE CARD SWIPER SHOWCASE */}
+        {/* 3D INTERACTIVE CARD SWIPER SHOWCASE WITH LIQUID GLASSMORPHISM */}
         <div className="relative w-full max-w-5xl mx-auto py-6 sm:py-10">
-          {/* Outer Glowing Glass Frame Container */}
-          <div className="relative rounded-[40px] bg-[#181C24] p-4 sm:p-8 border border-[#C8A86B]/40 shadow-[0_30px_90px_rgba(0,0,0,0.35)] overflow-hidden">
+          {/* Outer Liquid Glass Frame Container */}
+          <div className="relative rounded-[40px] bg-white/70 backdrop-blur-2xl backdrop-saturate-150 p-4 sm:p-8 border border-white/90 shadow-[0_30px_90px_rgba(0,0,0,0.06),inset_0_1.5px_0px_rgba(255,255,255,0.9)] overflow-hidden">
             {/* Subtle Animated Gold Ambient Backdrop Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C8A86B]/15 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C8A86B]/20 blur-[100px] rounded-full pointer-events-none" />
 
             <div className="relative min-h-[420px] sm:min-h-[500px] flex items-center justify-center">
               <AnimatePresence mode="wait">
@@ -130,13 +130,13 @@ export const Gallery: React.FC = () => {
                     exit={{ opacity: 0, scale: 0.9, rotateY: 15, x: -100 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     onClick={() => setSelectedImage(filteredItems[currentIndex])}
-                    className="relative w-full grid grid-cols-1 md:grid-cols-12 rounded-[32px] overflow-hidden bg-white border border-white/20 shadow-2xl cursor-pointer group"
+                    className="relative w-full grid grid-cols-1 md:grid-cols-12 rounded-[32px] overflow-hidden bg-white border border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.08)] cursor-pointer group"
                   >
                     {/* Left Info Panel */}
                     <div className="md:col-span-5 p-8 sm:p-12 flex flex-col justify-between bg-gradient-to-br from-[#FAFAF8] to-[#F2EFE8] text-[#1F1F1F]">
                       <div>
                         <div className="flex items-center gap-2 mb-4">
-                          <span className="px-3.5 py-1 rounded-full bg-[#C8A86B] text-[#1F1F1F] text-[10px] font-bold uppercase tracking-widest flex items-center gap-1">
+                          <span className="px-3.5 py-1 rounded-full bg-[#C8A86B] text-[#1F1F1F] text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 shadow-sm">
                             <Sparkles className="w-3 h-3" /> {filteredItems[currentIndex].category}
                           </span>
                           <span className="text-xs text-[#6B7280] font-medium flex items-center gap-1">
@@ -177,18 +177,18 @@ export const Gallery: React.FC = () => {
             </div>
 
             {/* Navigation Arrow Controls & Progress Dots */}
-            <div className="relative z-20 flex items-center justify-between mt-8 pt-4 border-t border-white/10">
+            <div className="relative z-20 flex items-center justify-between mt-8 pt-4 border-t border-black/10">
               <div className="flex items-center gap-2">
                 <button
                   onClick={handlePrev}
-                  className="p-3 rounded-full bg-white/10 text-white hover:bg-[#C8A86B] hover:text-[#1F1F1F] transition-all cursor-pointer border border-white/20"
+                  className="p-3 rounded-full bg-white/80 text-[#1F1F1F] hover:bg-[#C8A86B] hover:text-[#1F1F1F] transition-all cursor-pointer border border-white/90 shadow-sm"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-3 rounded-full bg-white/10 text-white hover:bg-[#C8A86B] hover:text-[#1F1F1F] transition-all cursor-pointer border border-white/20"
+                  className="p-3 rounded-full bg-white/80 text-[#1F1F1F] hover:bg-[#C8A86B] hover:text-[#1F1F1F] transition-all cursor-pointer border border-white/90 shadow-sm"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -202,13 +202,13 @@ export const Gallery: React.FC = () => {
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      currentIndex === idx ? 'w-8 bg-[#C8A86B]' : 'w-2 bg-white/30 hover:bg-white/50'
+                      currentIndex === idx ? 'w-8 bg-[#C8A86B]' : 'w-2 bg-black/20 hover:bg-black/40'
                     }`}
                   />
                 ))}
               </div>
 
-              <span className="text-xs font-mono text-white/70">
+              <span className="text-xs font-mono font-bold text-[#1F1F1F]/70">
                 0{currentIndex + 1} / 0{filteredItems.length}
               </span>
             </div>
