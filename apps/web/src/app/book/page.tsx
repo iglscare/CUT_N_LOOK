@@ -76,7 +76,7 @@ export default function BookPage() {
               className="text-4xl sm:text-6xl font-display font-bold text-[#202A36] tracking-tight justify-center mb-4"
             />
             <p className="text-[#6B7280] text-sm sm:text-base leading-relaxed">
-              Select your desired service, master stylist, and preferred time slot for a private session in our Fifth Ave studio.
+              Select your desired service, master stylist, and preferred time slot for a private session in our Dwarka, New Delhi studio.
             </p>
           </div>
 

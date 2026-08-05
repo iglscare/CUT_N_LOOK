@@ -16,11 +16,6 @@ export default function StylistsPage() {
       <div className="min-h-screen bg-background text-primary selection:bg-accent selection:text-surface font-sans pt-24">
         <Navbar onBookClick={() => setIsBookingOpen(true)} />
 
-        <div className="max-w-[1440px] mx-auto px-6 pt-12 text-center">
-          <AnimatedText text="Master Artisans" as="h1" className="text-5xl sm:text-7xl font-display font-bold justify-center mb-4" />
-          <p className="text-secondary text-base max-w-xl mx-auto">Trained in London, Paris, and Tokyo. Meet our world-class hair & beauty specialists.</p>
-        </div>
-
         <Stylists onBookStylist={(stylist) => { setSelectedStylist(stylist); setIsBookingOpen(true); }} />
 
         <Footer />

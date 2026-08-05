@@ -150,7 +150,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                     transition={{ duration: 0.5, ease: 'easeOut' }}
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover object-center filter grayscale contrast-110 group-hover:grayscale-0 transition-all duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
                   />
                   {service.popular && (
                     <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-accent text-primary text-[10px] font-bold uppercase tracking-widest flex items-center gap-1 shadow-md">

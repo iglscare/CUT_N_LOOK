@@ -93,8 +93,8 @@ export const Stylists: React.FC<StylistsProps> = ({ onBookStylist }) => {
                   <span className="text-[11px] font-medium text-secondary bg-surface px-3 py-1 rounded-full border border-border">
                     {member.exp}
                   </span>
-                  <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[11px] text-secondary hover:text-accent flex items-center gap-1">
-                    <Instagram className="w-3 h-3" />
+                  <a href="https://www.instagram.com/cut_n_looks_/?hl=en" target="_blank" rel="noreferrer" className="text-[11px] text-secondary hover:text-accent flex items-center gap-1">
+                    <Instagram className="w-3.5 h-3.5 text-[#C8A86B]" /> @cut_n_looks_
                   </a>
                 </div>
 
