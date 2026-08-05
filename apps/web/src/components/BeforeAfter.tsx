@@ -88,16 +88,15 @@ export const BeforeAfter: React.FC = () => {
             className="absolute inset-0 w-full h-full object-cover object-center filter contrast-110"
           />
 
-          {/* Before Image (Clipped Foreground) */}
+          {/* Before Image (Clipped Foreground without image squishing) */}
           <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ width: `${sliderPosition}%` }}
+            className="absolute inset-0 overflow-hidden pointer-events-none"
+            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <img
               src={activePreset.before}
               alt="Before Transformation"
-              className="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125 max-w-none"
-              style={{ width: '100%', height: '100%' }}
+              className="absolute inset-0 w-full h-full object-cover object-center filter grayscale contrast-125"
             />
           </div>
 

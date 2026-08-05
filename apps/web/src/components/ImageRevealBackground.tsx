@@ -3,20 +3,23 @@
 import React, { useEffect, useRef } from 'react';
 
 const BG_IMAGE_1 =
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260802_074534_f0d9d476-3f86-4c67-9b12-dfc63d99da41.png&w=1920&q=85';
-
+  'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1920&auto=format&fit=crop';
 const BG_IMAGE_2 =
-  'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260802_075145_1b557479-775b-43af-8270-f45d79d97d5a.png&w=1920&q=85';
+  'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1920&auto=format&fit=crop';
 
 export const ImageRevealBackground: React.FC = () => {
   const revealRef = useRef<HTMLDivElement>(null);
+  const spotlightRingRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const smoothRef = useRef({ x: 0, y: 0 });
   const animFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    mouseRef.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    smoothRef.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    // Initial center-right focus position
+    const initialX = window.innerWidth * 0.7;
+    const initialY = window.innerHeight * 0.45;
+    mouseRef.current = { x: initialX, y: initialY };
+    smoothRef.current = { x: initialX, y: initialY };
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY };
@@ -24,47 +27,30 @@ export const ImageRevealBackground: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-
     const updateSpotlight = () => {
-      if (!ctx || !revealRef.current) return;
+      if (!revealRef.current) return;
 
       const width = window.innerWidth;
-      const height = window.innerHeight;
 
-      if (canvas.width !== width || canvas.height !== height) {
-        canvas.width = width;
-        canvas.height = height;
+      // Smooth lerp for fluid tracking
+      smoothRef.current.x += (mouseRef.current.x - smoothRef.current.x) * 0.12;
+      smoothRef.current.y += (mouseRef.current.y - smoothRef.current.y) * 0.12;
+
+      const cx = Math.round(smoothRef.current.x);
+      const cy = Math.round(smoothRef.current.y);
+      const radius = Math.round(Math.min(420, Math.max(180, width * 0.18)));
+
+      // Hardware accelerated radial gradient mask (no dataURL overhead)
+      const maskGradient = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, black 0%, black 45%, rgba(0, 0, 0, 0.75) 65%, rgba(0, 0, 0, 0.35) 82%, transparent 100%)`;
+
+      revealRef.current.style.maskImage = maskGradient;
+      revealRef.current.style.webkitMaskImage = maskGradient;
+
+      if (spotlightRingRef.current) {
+        spotlightRingRef.current.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
+        spotlightRingRef.current.style.width = `${radius * 2}px`;
+        spotlightRingRef.current.style.height = `${radius * 2}px`;
       }
-
-      smoothRef.current.x += (mouseRef.current.x - smoothRef.current.x) * 0.1;
-      smoothRef.current.y += (mouseRef.current.y - smoothRef.current.y) * 0.1;
-
-      const cx = smoothRef.current.x;
-      const cy = smoothRef.current.y;
-      const radius = Math.round(Math.min(420, Math.max(160, width * 0.16)));
-
-      ctx.clearRect(0, 0, width, height);
-
-      const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-      grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.4, 'rgba(255, 255, 255, 1)');
-      grad.addColorStop(0.6, 'rgba(255, 255, 255, 0.75)');
-      grad.addColorStop(0.75, 'rgba(255, 255, 255, 0.4)');
-      grad.addColorStop(0.88, 'rgba(255, 255, 255, 0.12)');
-      grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
-
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-      ctx.fill();
-
-      const maskDataUrl = canvas.toDataURL();
-      revealRef.current.style.maskImage = `url(${maskDataUrl})`;
-      revealRef.current.style.webkitMaskImage = `url(${maskDataUrl})`;
-      revealRef.current.style.maskSize = '100% 100%';
-      revealRef.current.style.webkitMaskSize = '100% 100%';
 
       animFrameRef.current = requestAnimationFrame(updateSpotlight);
     };
@@ -78,27 +64,37 @@ export const ImageRevealBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Base Layer: BG_IMAGE_1 full bleed wallpaper shifted calc(50% + 380px) to place girl in far right corner */}
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
+      {/* Base Layer Image */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-500"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-center transition-all duration-500"
         style={{
           backgroundImage: `url("${BG_IMAGE_1}")`,
-          backgroundPosition: 'calc(50% + 380px) center',
+          backgroundPosition: 'calc(50% + 300px) center',
         }}
       />
 
-      {/* Spotlight Reveal Layer: BG_IMAGE_2 */}
+      {/* Soft gradient blend on the left to preserve text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#F4F1EA] via-[#F4F1EA]/80 to-transparent" />
+
+      {/* Revealed Image Layer (Spotlight) */}
       <div
         ref={revealRef}
-        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-500 hidden lg:block"
+        className="absolute inset-0 bg-cover bg-no-repeat transition-all duration-300 hidden lg:block"
         style={{
           backgroundImage: `url("${BG_IMAGE_2}")`,
-          backgroundPosition: 'calc(50% + 380px) center',
+          backgroundPosition: 'calc(50% + 300px) center',
+          filter: 'contrast(1.08) brightness(1.05)',
         }}
       />
 
-      {/* Subtle Parallax Grid Overlay */}
+      {/* Interactive Spotlight Glowing Ring */}
+      <div
+        ref={spotlightRingRef}
+        className="absolute top-0 left-0 rounded-full border border-[#C8A86B]/40 shadow-[0_0_60px_rgba(200,168,107,0.3)] pointer-events-none hidden lg:block"
+      />
+
+      {/* Parallax Grid Overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none stroke-[#64748b]" strokeWidth="0.6">
         <pattern id="futuristicGrid" width="48" height="48" patternUnits="userSpaceOnUse">
           <path d="M 48 0 L 0 0 0 48" fill="none" />
@@ -108,3 +104,4 @@ export const ImageRevealBackground: React.FC = () => {
     </div>
   );
 };
+
