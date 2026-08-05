@@ -11,7 +11,7 @@ const GALLERY_ITEMS = [
     id: 1,
     title: 'Signature Honey Balayage & Blowout',
     category: 'Coloring',
-    image: '/gallery/gallery_1.png',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-8 lg:row-span-2 min-h-[380px] sm:min-h-[460px]',
     likes: '4.8k'
   },
@@ -19,7 +19,7 @@ const GALLERY_ITEMS = [
     id: 2,
     title: 'Royal Indian Bridal Couture',
     category: 'Bridal Suite',
-    image: '/gallery/gallery_2.png',
+    image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-4 lg:row-span-2 min-h-[380px] sm:min-h-[460px]',
     likes: '5.2k'
   },
@@ -27,7 +27,7 @@ const GALLERY_ITEMS = [
     id: 3,
     title: 'Dwarka Luxury Studio Interior',
     category: 'Hair Architecture',
-    image: '/gallery/gallery_3.png',
+    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-4 lg:row-span-1 min-h-[280px]',
     likes: '3.1k'
   },
@@ -35,7 +35,7 @@ const GALLERY_ITEMS = [
     id: 4,
     title: 'Precision Cut & Sculpting Session',
     category: 'Hair Architecture',
-    image: '/gallery/gallery_4.png',
+    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-4 lg:row-span-1 min-h-[280px]',
     likes: '3.9k'
   },
@@ -43,7 +43,7 @@ const GALLERY_ITEMS = [
     id: 5,
     title: 'Botanical Scalp Steam & Massage Spa',
     category: 'Skincare Spa',
-    image: '/gallery/gallery_5.png',
+    image: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-4 lg:row-span-1 min-h-[280px]',
     likes: '2.7k'
   },
@@ -51,7 +51,7 @@ const GALLERY_ITEMS = [
     id: 6,
     title: 'Gold Foil Geometric Nail Art Spa',
     category: 'Nail Art',
-    image: '/gallery/gallery_6.png',
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop',
     gridSpan: 'lg:col-span-12 lg:row-span-1 min-h-[320px] sm:min-h-[400px]',
     likes: '4.2k'
   },
