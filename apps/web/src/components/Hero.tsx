@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
-    <section id="home" className="relative min-h-screen w-full flex items-center pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-12 bg-[#F4F1EA] overflow-hidden">
+    <section id="home" className="relative min-h-screen w-full flex items-center pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-12 bg-[#F5F4F0] overflow-hidden">
       {/* Full-Bleed Interactive Dual-Image Spotlight Reveal Background */}
       <ImageRevealBackground />
 
