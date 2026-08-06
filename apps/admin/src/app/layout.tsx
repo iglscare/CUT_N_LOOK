@@ -1,5 +1,6 @@
 import './globals.css';
 import React from 'react';
+import { WatermarkButton } from '@skyelite/ui';
 
 export const metadata = {
   title: 'SkyElite Admin Dashboard | Salon Owner Operations',
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="dark">
       <body className="bg-obsidian-900 text-slate-100 antialiased selection:bg-skygold-500 selection:text-obsidian-900">
         {children}
+        <WatermarkButton />
       </body>
     </html>
   );

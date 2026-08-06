@@ -3,6 +3,7 @@ export * from './components/Input';
 export * from './components/Card';
 export * from './components/Modal';
 export * from './components/Badge';
+export * from './components/WatermarkButton';
 
 // Premium Motion & Floating Card Stack Exports
 export * from './motion/TransitionProvider';

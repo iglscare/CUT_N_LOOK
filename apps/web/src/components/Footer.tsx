@@ -94,8 +94,29 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright Bar */}
-        <div className="pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#6B7280] font-medium gap-4">
+        <div className="pt-8 border-t border-black/10 flex flex-col md:flex-row items-center justify-between text-[11px] text-[#6B7280] font-medium gap-4">
           <p>© {new Date().getFullYear()} Cut N Looks Studio. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-center">
+            <a
+              href="https://portfolio.techtipstool.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#202A36] font-semibold hover:text-[#C8A86B] transition-colors flex items-center gap-1"
+            >
+              <span>Made with 💗 by</span>
+              <span className="underline decoration-[#C8A86B]/50 hover:decoration-[#C8A86B]">TechTipsTool</span>
+            </a>
+            <span className="text-black/20 hidden sm:inline">•</span>
+            <a
+              href="https://portfolio.techtipstool.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#202A36] font-semibold hover:text-[#C8A86B] transition-colors flex items-center gap-1"
+            >
+              <span>Mockup developed by</span>
+              <span className="underline decoration-[#C8A86B]/50 hover:decoration-[#C8A86B]">TechTipsTool</span>
+            </a>
+          </div>
           <div className="flex gap-6">
             <span className="hover:text-[#202A36] transition-colors cursor-pointer">Privacy Policy</span>
             <span className="hover:text-[#202A36] transition-colors cursor-pointer">Terms of Service</span>
