@@ -18,7 +18,7 @@ export const ImageRevealBackground: React.FC = () => {
   useEffect(() => {
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
     const defaultX = typeof window !== 'undefined' ? (isMobile ? window.innerWidth * 0.5 : window.innerWidth * 0.72) : 400;
-    const defaultY = typeof window !== 'undefined' ? (isMobile ? window.innerHeight * 0.70 : window.innerHeight * 0.45) : 400;
+    const defaultY = typeof window !== 'undefined' ? (isMobile ? window.innerHeight * 0.55 : window.innerHeight * 0.45) : 400;
 
     mouseRef.current = { x: defaultX, y: defaultY };
     smoothRef.current = { x: defaultX, y: defaultY };
@@ -45,9 +45,9 @@ export const ImageRevealBackground: React.FC = () => {
         const cx = Math.round(smoothRef.current.x);
         const cy = Math.round(smoothRef.current.y);
         const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
-        const radius = Math.round(Math.min(220, Math.max(100, width * (width < 768 ? 0.28 : 0.10))));
+        const radius = Math.round(Math.min(280, Math.max(160, width * (width < 768 ? 0.45 : 0.12))));
 
-        const maskCss = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.35) 75%, rgba(0,0,0,0) 100%)`;
+        const maskCss = `radial-gradient(circle ${radius}px at ${cx}px ${cy}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)`;
 
         revealRef.current.style.webkitMaskImage = maskCss;
         revealRef.current.style.maskImage = maskCss;
@@ -67,11 +67,11 @@ export const ImageRevealBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#F4F1EA]">
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden bg-[#FAFAF8]">
       {/* Base Layer: BG_IMAGE_1 */}
       <div
         ref={bg1Ref}
-        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_10%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center] transition-all"
         style={{
           backgroundImage: `url("${BG_IMAGE_1}")`,
         }}
@@ -80,13 +80,16 @@ export const ImageRevealBackground: React.FC = () => {
       {/* Spotlight Reveal Layer: BG_IMAGE_2 */}
       <div
         ref={revealRef}
-        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_bottom_8%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center]"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_10%] sm:bg-[center_center] lg:bg-[calc(50%+380px)_center] transition-all"
         style={{
           backgroundImage: `url("${BG_IMAGE_2}")`,
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat',
         }}
       />
+
+      {/* Mobile Subtle Light Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF8]/75 via-[#FAFAF8]/30 to-[#FAFAF8]/80 lg:hidden pointer-events-none" />
     </div>
   );
 };
