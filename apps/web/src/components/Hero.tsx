@@ -74,15 +74,16 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 </motion.button>
               </Link>
 
-              {/* Round Video Button */}
+              {/* Instagram Showcase Reel Button */}
               <motion.button
-                whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.08, rotate: 6 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsVideoModalOpen(true)}
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/70 backdrop-blur-md border border-white/90 flex items-center justify-center text-[#1F1F1F] hover:bg-white transition-all cursor-pointer shadow-sm"
-                aria-label="Play tour video"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-[#F56040] via-[#E1306C] to-[#C13584] text-white flex items-center justify-center shadow-[0_8px_20px_rgba(225,48,108,0.35)] cursor-pointer transition-all border border-white/40"
+                aria-label="Watch Instagram Reels"
+                title="Watch @cut_n_looks_ Reels"
               >
-                <Play className="w-4 h-4 fill-[#1F1F1F] ml-0.5" />
+                <Instagram className="w-5 h-5 text-white" />
               </motion.button>
             </div>
           </div>
